@@ -15,7 +15,7 @@ const Auth0ProviderWithNavigate = (
         throw new Error("Auth0 environment variables are not set");
     }
     const onRedirectCallback = (appState?: AppState) => {
-        navigate("/auth-callback");
+        navigate("/auth-callback" || appState?.returnTo);
     }
     return (
 
