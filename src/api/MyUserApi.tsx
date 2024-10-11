@@ -53,6 +53,7 @@ export const useUpdateMyUser = () => {
     const { getAccessTokenSilently } = useAuth0();
 
     const updateMyUserRequest = async (formData: UpdateMyUserRequest) => {
+        console.log(formData);
         const accessToken = await getAccessTokenSilently();
         const response = await fetch(`${API_BASE_URL}/api/my/user`, {
             method: 'PUT',

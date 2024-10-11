@@ -44,10 +44,14 @@ const UserProfileForm = ({ onSave, isLoading, title = "User Profile", currentUse
         form.reset(currentUser);
     }, [currentUser, form]);
 
+    const onSubmit = (data: UserFormData) => {
+        console.log(data);
+    }
+
     return (
         <Form {...form}>
             <form
-                onSubmit={form.handleSubmit(onSave)}
+                onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-4 bg-gray-50 rounded-lg md:p-10"
             >
                 <div>
